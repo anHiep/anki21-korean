@@ -6,7 +6,7 @@ from .NaverTTS.navertts.tts import NaverTTS
 def save_tts_to_media(word: str) -> str:
     tts = NaverTTS(word, lang='ko')
 
-    with tempfile.NamedTemporaryFile(suffix="_{word}_ko.mp3", delete=False) as tmpfile:
+    with tempfile.NamedTemporaryFile(suffix=f"_{word}_ko.mp3", delete=False) as tmpfile:
         temp_path = tmpfile.name
 
     tts.save(temp_path)  

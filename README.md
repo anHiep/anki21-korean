@@ -49,12 +49,19 @@ For reliability and to avoid rate limits, you may want to use your own API key.
 
 ### Steps to add your own API key:
 
-1. Open the file `config.py` inside the add-on folder.
+1. Open the file `__init__.py` inside the add-on folder.
 2. Find the `api_key` entry.
 3. Replace the existing value with your own API key from [KRDict API](https://krdict.korean.go.kr/).
 4. Save the file and restart Anki.
 
-Example snippet from `config.py`:
+Example snippet from `__init__.py`:
 
 ```python
-KRDICT_API_KEY = "{YOUR_API}"
+from .ui import init_addon
+import os
+
+os.environ["PATH"] += ":/usr/local/bin"
+os.environ["KRDICT_API_KEY"] = "{YOUR_API_KEY}"
+
+init_addon()
+

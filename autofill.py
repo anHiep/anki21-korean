@@ -16,9 +16,7 @@ def fill_korean_fields(editor: Editor):
         QMessageBox.information(editor.parentWindow, "No Korean Word", "Please enter a Korean word in the 'Korean' field first.")
         return
 
-    print("Getting data for:", korean_text)
     data = fetch_from_krdict(korean_text)
-    print(data)
 
     audio_filename = save_tts_to_media(data["word"])
 
@@ -29,3 +27,4 @@ def fill_korean_fields(editor: Editor):
     note[FIELDS[4]] = data["translation_def"]
 
     editor.loadNote()
+

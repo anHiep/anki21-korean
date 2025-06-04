@@ -1,1 +1,0 @@
-KRDICT_API_KEY = ""

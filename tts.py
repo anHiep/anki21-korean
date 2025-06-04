@@ -1,4 +1,4 @@
-from navertts import NaverTTS
+from .NaverTTS.navertts.tts import NaverTTS
 import os
 from aqt import mw
 
